@@ -17,17 +17,14 @@ public class Vasarlast {
 			int osszespenz=0;
 				
 				for(int j=0; j<tanulok.size(); j++) {
-					//if(tanulok.get(j).fogyasztas(r.nextInt((3000 - 1500) + 1) + 1500)) {
-					if(tanulok.get(j).fogyasztas(1000)) {
-					}else {
-						//tanulok.remove(tanulok.get(j));
-					}	
+					if(tanulok.get(j).fogyasztas(r.nextInt((3000 - 1500) + 1) + 1500)) {
+						tanulok.remove(tanulok.get(j));
+					}
 				}
 				
 				System.out.println("Tanulók száma "+ tanulok.size());
 				for(Tanulo t : tanulok) {
 					osszespenz += t.getPenz();	
-					//System.out.println("osszes penz" +osszespenz);
 				}
 				System.out.println("atlag penz: " + osszespenz/tanulok.size());
 				
