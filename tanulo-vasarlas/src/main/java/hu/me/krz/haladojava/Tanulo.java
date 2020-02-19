@@ -16,11 +16,11 @@ public class Tanulo {
 		this(nev, 10000);
 	}
 	
-	private String getNev() {
+	public String getNev() {
 		return nev;
 	}
 
-	private int getPenz() {
+	public int getPenz() {
 		return penz;
 	}
 
@@ -36,7 +36,7 @@ public class Tanulo {
 
 	@Override
 	public String toString() {
-		return "Tanulo [nev=" + nev + "]" + ", penz=" + penz;
+		return "Tanulo [" + nev + "]" + ", penz=" + penz;
 	}
 	
 	public boolean fogyasztas(int koltseg) {
