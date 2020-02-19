@@ -1,15 +1,15 @@
 package hu.me.krz.haladojava;
 
 public class Tanar extends Szemely implements Valogato<Tanar> {
-	private double atlag;
+	private double atlagjegy;
 
-	public Tanar(String name, int age, double atlag) {
+	public Tanar(String name, int age, double atlagjegy) {
 		super(name, age);
-		this.atlag = atlag;
+		this.atlagjegy = atlagjegy;
 	}
 
 	public boolean joAlanyE() {
-		if( this.getAge()<30 && this.atlag > 4) {
+		if( this.getAge()<30 && this.atlagjegy > 4) {
 			return true;
 		}else
 			return false;
@@ -17,7 +17,7 @@ public class Tanar extends Szemely implements Valogato<Tanar> {
 
 	@Override
 	public String toString() {
-		return "Tanar [atlag=" + atlag + ", toString()=" + super.toString() + "]";
+		return "Tanar [atlag=" + atlagjegy + ", toString()=" + super.toString() + "]";
 	}
 	
 }

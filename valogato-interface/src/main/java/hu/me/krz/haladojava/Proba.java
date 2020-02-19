@@ -19,42 +19,33 @@ public class Proba {
 		sc.close();
 		
 		
-		Diak[] diakok = new Diak[db];
-		Tanar[] tanarok = new Tanar[db];
+		
+		Valogato[] szemelyek = new Valogato[db];
 
-		for (int i = 0; i < diakok.length; i++) {
-			String name = "diák" + (i + 1);
+		for (int i = 0; i < szemelyek.length; i++) {
+			
 			Random r = new Random();
 			int age = r.nextInt(80 - 16 + 1) + 16;
-			int puska = r.nextInt(6 - 0) % 6;
-			diakok[i] = new Diak(name, age, puska);
-		}
-
-		for (int i = 0; i < tanarok.length; i++) {
-			String name = "tanár" + (i + 1);
-			Random r = new Random();
-			int age = r.nextInt(80 - 25 + 1) + 25;
-			double atlag = r.nextDouble() * (5 - 1) + 1;
-			tanarok[i] = new Tanar(name, age, atlag);
-		}
-		
-		for (Diak d : diakok) {
-			if (d.joAlanyE()) {
-				System.out.println(d);
+			
+			if(age%2 == 0) {
+				String name = "Tanar Bela" + (i + 1);
+				double atlagjegy = r.nextDouble()*5;
+				szemelyek[i] = new Tanar(name, age, atlagjegy);
+			}else {
+				String name = "diák" + (i + 1);
+				int puska = r.nextInt(6-0) % 6;
+				szemelyek[i] = new Diak(name, age, puska);
 			}
 		}
 
-		for (Tanar t : tanarok) {
-			if (t.joAlanyE()) {
-				System.out.println(t);
+		for (Valogato a : szemelyek) {
+			if (a.joAlanyE()) {
+				System.out.print("jó cucc: \t");
+			}else {
+				System.out.print("rossz cucc: \t");
 			}
+			System.out.println(a);
 		}
-		
-		
-		
-		
-		
-		
 	}
 
 }
