@@ -13,7 +13,7 @@ public class Diak extends Szemely implements Comparable<Diak> {
 
 	@Override
 	public String toString() {
-		return "Diak [db=" + db + "]";
+		return "Diák: név " + getName() + ", életkor " + getAge() + ", puskák száma " + db;
 	}
 
 
