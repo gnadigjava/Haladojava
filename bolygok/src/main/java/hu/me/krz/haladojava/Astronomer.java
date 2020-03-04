@@ -12,6 +12,7 @@ public class Astronomer {
 		super();
 		this.nev = nev;
 	}
+	
 
 	public List<Planet> getDiscoverdPlanets() {
 		return discoverdPlanets;
