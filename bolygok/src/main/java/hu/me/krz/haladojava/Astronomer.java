@@ -1,46 +1,44 @@
+
+  
 package hu.me.krz.haladojava;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Astronomer {
-	
-	private String nev;
-	private List<Planet> discoverdPlanets;
-	
-	public Astronomer(String nev) {
-		super();
-		this.nev = nev;
-	}
-	
 
-	public List<Planet> getDiscoverdPlanets() {
-		return discoverdPlanets;
+	private final String nev;
+	private final List<Planet> discoveredPlanets;
+
+	public Astronomer(String nev, List<Planet> discoveredPlanets) {
+		this.nev = nev;
+		this.discoveredPlanets = new ArrayList<>();
+		this.discoveredPlanets.addAll(discoveredPlanets);
 	}
-	
+
 	public String getNev() {
 		return nev;
 	}
-	
 
-	public void observeTheSky() {
-		
-		Random r = new Random();
-		
-		for(int i=0;i<10;i++) {
-			double radius = r.nextDouble() * 100;
-			String nev = getNev() + " " + (i + 1);
-			Point p = new Point(0, 0, 0);
-			Point t = new Point(((i + 1) * 10), 0, 0);
-			p.translate(t);
-
-			Planet[] bolygok = new Planet[10];
-			bolygok[i] = new Planet(p, radius, nev);
-
-			System.out.println(bolygok[i]);
-		}
+	public List<Planet> getDiscoveredPlanets() {
+		return discoveredPlanets;
 	}
 
+	public void observeTheSky() {
 
-	
+		Random r = new Random();
+
+		for (int i = 0; i < 10; i++) {
+
+			double radius = r.nextDouble() * 1000;
+			String nevHelper = nev + " " + (i + 1);
+			Point pointHelper = new Point(0, 0, 0);
+			Point t = new Point(((i + 1) + 10), 0, 0);
+			pointHelper.translate(t);
+
+			discoveredPlanets.add(new Planet(pointHelper, radius, nevHelper));
+
+		}
+	}
 }
