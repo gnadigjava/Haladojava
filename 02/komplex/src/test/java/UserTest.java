@@ -42,8 +42,8 @@ class UserTest {
     @Test
     void testGetNeptunkod() {
         User u = mock(User.class);
-        when(u.getNeptunkod()).thenReturn("EHD123");
-        assertEquals(u.getNeptunkod(), "EHD123");
+        when(u.getNeptunkod()).thenReturn("F45GJY");
+        assertEquals(u.getNeptunkod(), "F45GJY");
 
     }
 
